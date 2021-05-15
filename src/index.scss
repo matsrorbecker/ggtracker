@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
 
 body {
-  padding-top: 100px;
+  padding-top: 200px;
   width: 80%;
   margin: auto;
   color: #111;
@@ -35,9 +35,10 @@ h1, .heading, .error.heading {
 
 .error {
   .heading {
-    font-size: 24px;
+    font-size: 50px;
   }
   .body {
-    font-size: 18px;
+    margin-top: 20px;
+    font-size: 25px;
   }
 }

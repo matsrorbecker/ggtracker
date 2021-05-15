@@ -3,6 +3,7 @@ import { calculateGenderGap, formatDecimalNumber } from './fun'
 
 const App = () => {
   const [data, setData] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,11 +18,25 @@ const App = () => {
         })
       } catch (err) {
         console.error('Något gick snett:', err)
+        setError(err)
       }
     }
 
     fetchData()
   }, [])
+
+  if (error) {
+    return (
+      <div className='error'>
+        <div className='heading'>
+          Något gick snett när sidan skulle laddas... :(
+        </div>
+        <div className='body'>
+          Men kom gärna tillbaka om en liten stund.
+        </div>
+      </div>
+    )
+  }
 
   if (!data) return null
 
