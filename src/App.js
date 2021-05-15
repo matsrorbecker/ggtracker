@@ -7,9 +7,14 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(process.env.REACT_APP_API_URL)
-        const { data } = await response.json()
-        setData(data)
+        let response = await fetch(`${process.env.REACT_APP_API_URL}/latest`)
+        const latestPoll = (await response.json()).data
+        response = await fetch(`${process.env.REACT_APP_API_URL}/previous`)
+        const previousPolls = (await response.json()).data
+        setData({
+          latestPoll,
+          previousPolls
+        })
       } catch (err) {
         console.error('Något gick snett:', err)
       }
@@ -20,7 +25,8 @@ const App = () => {
 
   if (!data) return null
 
-  const { genderGap } = calculateGenderGap(data)
+  const { latestPoll } = data
+  const { genderGap } = calculateGenderGap(latestPoll)
 
   return (
     <div className='App'>
