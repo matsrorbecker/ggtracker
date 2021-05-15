@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+
+body {
+  padding-top: 100px;
+  width: 80%;
+  margin: auto;
+  color: #111;
+  text-align: center;
+  font-family: Roboto, sans-serif;
+}
+
+h1, .heading, .error.heading {
+  font-family: Inter, sans-serif;  
+  font-weight: 900;
+}
+
+.heading {
+  font-size: 100px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.result {
+  display: block;
+  font-size: 200px;
+}
+
+.explanation {
+  width: 67%;
+  margin: auto;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.error {
+  .heading {
+    font-size: 24px;
+  }
+  .body {
+    font-size: 18px;
+  }
+}
