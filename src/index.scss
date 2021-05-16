@@ -29,7 +29,8 @@ h1, .heading, .error.heading {
 .explanation {
   width: 67%;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
   font-size: 18px;
 }
 
@@ -40,5 +41,13 @@ h1, .heading, .error.heading {
   .body {
     margin-top: 20px;
     font-size: 25px;
+  }
+}
+
+.charts {
+  display: flex;
+  flex-direction: row;
+  div {
+    flex: 1;
   }
 }

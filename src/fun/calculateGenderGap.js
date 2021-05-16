@@ -28,7 +28,7 @@ export const calculateGenderGap = (data, ageGroup = 'tot18+') => {
   }, {})
 
   return {
-    genderGap,
+    genderGap: Math.round(genderGap * 10) / 10,
     calculation
   }
 }
