@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
 import LineChart from './components/LineChart'
+import BarChart from './components/BarChart'
 import {
   calculateGenderGap,
   formatDecimalNumber,
   getYearAndMonth,
-  getLineChartData
+  getLineChartData,
+  getBarChartData
 } from './fun'
 
 const App = () => {
@@ -50,6 +52,7 @@ const App = () => {
   const { genderGap } = calculateGenderGap(latestPoll)
   const { year, month } = getYearAndMonth(latestPoll)
   const lineChartData = getLineChartData(previousPolls)
+  const barChartData = getBarChartData(latestPoll)
 
   return (
     <div>
@@ -62,12 +65,16 @@ const App = () => {
       </div>
       <div className='explanation'>
         *) De summerade skillnaderna mellan stödet för olika partier bland kvinnor respektive män, enligt <a href='https://www.scb.se/hitta-statistik/statistik-efter-amne/demokrati/partisympatier/partisympatiundersokningen-psu/'>SCB:s partisympatiundersökning</a> i {`${month} ${year}`}.
-        Endast statistiskt signifikanta skillnader inkluderas i beräkningen.
+        Endast skillnader som är statistiskt signifikanta vid en konfidensgrad på 95% inkluderas i beräkningen.
       </div>
       <div className='charts'>
         <div>
           <h1>Könsgapets utveckling 2006–{year}</h1>
           <LineChart data={lineChartData} />
+        </div>
+        <div>
+          <h1>Partisympatierna i {`${month} ${year}`}</h1>
+          <BarChart data={barChartData} />
         </div>
       </div>
     </div>
