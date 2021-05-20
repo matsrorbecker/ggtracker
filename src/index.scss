@@ -15,6 +15,10 @@ h1, .heading, .error.heading {
   font-weight: 900;
 }
 
+a {
+  color: #111;
+}
+
 .heading {
   font-size: 100px;
   font-weight: 900;
@@ -24,7 +28,7 @@ h1, .heading, .error.heading {
 .result {
   display: block;
   font-size: 200px;
-  color: steelblue;
+  color: #9467bd;
 }
 
 .explanation {
